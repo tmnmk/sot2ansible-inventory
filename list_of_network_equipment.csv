@@ -1,0 +1,9 @@
+id,hostname,ip_mgmt_address,site,role_of_work,type_of_login,os,manufacturer,model,serial_number,eos,license_expires,hardware_support,cluster,operational_status
+001,ALFA-CORE-SW01,10.0.0.11,Alfa,core_sw,Local,ios,cisco,C9500-48Y4C,SDSDFS12,N/A,N/A,False,False,Install
+002,ALFA-ACCESS-SW01,10.0.0.21,Alfa,access_sw,Local,ios,cisco,WS-C3850-48P,SDXCSMMC32,30-10-2023,N/A,False,False,Install
+003,BETA-CORE-SW01,10.0.1.11,Beta,core_sw,Local,ios,cisco,C9500-48Y4C,SADVSDSA12,N/A,N/A,False,False,Install
+004,BETA-ACCESS-SW01,10.0.1.21,Beta,access_sw,Local,ios,cisco,WS-C3850-48P,SADSALVHJW12,30-10-2023,N/A,False,False,Install
+005,GAMMA-CORE-SW01,10.0.2.11,Gamma,core_sw,Local,ios,cisco,C9500-48Y4C,SDHWWQN9812,N/A,N/A,False,False,Install
+006,GAMMA-ACCESS-SW01,10.0.2.21,Gamma,access_sw,Local,ios,cisco,WS-C3850-48P,SWAEWQLC123120,30-10-2023,N/A,False,False,Install
+007,GAMMA-EDGE-SW01-1,10.0.2.10,Gamma,edge_sw,Local,ios,cisco,C9500-48Y4C,SDHWWQN9722,N/A,N/A,False,True,Install
+008,GAMMA-EDGE-SW01-2,10.0.2.10,Gamma,edge_sw,Local,ios,cisco,C9500-48Y4C,SDHWWQN9723,N/A,N/A,False,True,Install

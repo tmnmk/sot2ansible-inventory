@@ -1,0 +1,28 @@
+Host {{ hostname_render }}_{{ model_render }}
+    Hostname {{ ip_mgmt_address_render }}
+    {% if "C29" in model_render %}
+    KexAlgorithms +diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
+    HostkeyAlgorithms +ssh-rsa
+    {% elif "C3560G" in model_render %}
+    KexAlgorithms +diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
+    HostkeyAlgorithms +ssh-rsa
+    Ciphers +aes256-cbc
+    {% elif "S5732" in model_render %}
+    KexAlgorithms +diffie-hellman-group16-sha512
+    HostkeyAlgorithms +ssh-rsa
+    {% elif "S6730" in model_render %}
+    KexAlgorithms +diffie-hellman-group16-sha512
+    HostkeyAlgorithms +ssh-rsa
+    {% elif "PA" in model_render %}
+    HostkeyAlgorithms +ssh-rsa
+    {% elif "ASA" in model_render %}
+    HostkeyAlgorithms +ssh-rsa
+    {% endif %}
+    {% if role_of_work_render == "fw" %}
+    User test
+    {% elif type_of_login_render == "Centralize" %}
+    User tacacs_user
+    {% else %}
+    User test
+    {% endif %}
+

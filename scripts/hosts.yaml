@@ -1,0 +1,51 @@
+---
+all:
+  children:
+    alfa:
+      children:
+        access_sw_alfa:
+          hosts:
+            alfa-access-sw01:
+              ansible_host: 10.0.0.21
+              ansible_network_os: ios
+              role: access_sw
+        core_sw_alfa:
+          hosts:
+            alfa-core-sw01:
+              ansible_host: 10.0.0.11
+              ansible_network_os: ios
+              role: core_sw
+    beta:
+      children:
+        access_sw_beta:
+          hosts:
+            beta-access-sw01:
+              ansible_host: 10.0.1.21
+              ansible_network_os: ios
+              role: access_sw
+        core_sw_beta:
+          hosts:
+            beta-core-sw01:
+              ansible_host: 10.0.1.11
+              ansible_network_os: ios
+              role: core_sw
+    gamma:
+      children:
+        access_sw_gamma:
+          hosts:
+            gamma-access-sw01:
+              ansible_host: 10.0.2.21
+              ansible_network_os: ios
+              role: access_sw
+        core_sw_gamma:
+          hosts:
+            gamma-core-sw01:
+              ansible_host: 10.0.2.11
+              ansible_network_os: ios
+              role: core_sw
+        edge_sw_gamma:
+          hosts:
+            gamma-edge-sw01:
+              ansible_host: 10.0.2.10
+              ansible_network_os: ios
+              role: edge_sw

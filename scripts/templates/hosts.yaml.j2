@@ -1,0 +1,17 @@
+---
+all:
+  children:
+{% for i in top|groupby('site') %}
+    {{ i.0|lower }}:
+      children:
+{% for j in i.1|groupby('role_of_work') %}
+        {{ j.0|lower|replace(" ", "_")+"_"+i.0|lower }}:
+          hosts:
+{% for k in j.1 | unique(attribute='ip_mgmt_address') %}
+            {{ k['hostname']|lower }}:
+              ansible_host: {{ k['ip_mgmt_address'] }}
+              ansible_network_os: {{ k['os']|lower }}
+              role: {{ k['role_of_work']|lower|replace(" ", "_") }}
+{% endfor %}
+{% endfor %}
+{% endfor %}

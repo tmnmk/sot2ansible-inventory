@@ -1,0 +1,24 @@
+Host ALFA-CORE-SW01_C9500-48Y4C
+    Hostname 10.0.0.11
+    User test
+Host ALFA-ACCESS-SW01_WS-C3850-48P
+    Hostname 10.0.0.21
+    User test
+Host BETA-CORE-SW01_C9500-48Y4C
+    Hostname 10.0.1.11
+    User test
+Host BETA-ACCESS-SW01_WS-C3850-48P
+    Hostname 10.0.1.21
+    User test
+Host GAMMA-CORE-SW01_C9500-48Y4C
+    Hostname 10.0.2.11
+    User test
+Host GAMMA-ACCESS-SW01_WS-C3850-48P
+    Hostname 10.0.2.21
+    User test
+Host GAMMA-EDGE-SW01_C9500-48Y4C
+    Hostname 10.0.2.10
+    User test
+Host GAMMA-EDGE-SW01_C9500-48Y4C
+    Hostname 10.0.2.10
+    User test
