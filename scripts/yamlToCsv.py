@@ -4,7 +4,7 @@ import yaml
 import csv
 import os
 import sys
-
+import typing
 
 def read_yaml(file_path):
     with open(file_path) as f:
@@ -12,7 +12,7 @@ def read_yaml(file_path):
     return content
 
 
-def convert_to_csv(content):
+def convert_to_csv(content: typing.List[typing.Dict]) -> typing.List[typing.List[str]]:
     rows_to_write = []
     for sample in content:
         rows_to_write.append([
@@ -35,7 +35,7 @@ def convert_to_csv(content):
     return rows_to_write
 
 
-def write_csv(file_path, rows_to_write):
+def write_csv(file_path: typing[str], rows_to_write: typing.List[typing.List[str]]):
     dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     with open(os.path.join(dir, file_path), 'w', newline='') as output:
         csvHeaders = ["id","hostname",
