@@ -6,10 +6,16 @@ import sys
 from operator import itemgetter
 from jinja2 import Environment, FileSystemLoader
 
-dir = os.path.dirname(os.getcwd())
+dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-#$ python3 yaml2ssh_config.py templates/ssh_config.j2
-template_dir, template_file = os.path.split(sys.argv[1])
+if len(sys.argv) < 3:
+    print("Please provide the path to the YAML file as a first argument.")
+    print("Please provide the path to the Jinja2 template as a second argument.")
+    sys.exit(1)
+
+FILE_PATH = sys.argv[1]
+template_dir, template_file = os.path.split(sys.argv[2])
+
 
 #Define Environment for Jinja2 template
 env = Environment(
@@ -19,7 +25,7 @@ env = Environment(
 template = env.get_template(template_file)
 
 #Read the file and upload its content to the list of dictionaries
-with open(dir + "/list_of_network_equipment.yaml", "r") as f:
+with open(FILE_PATH, "r") as f:
     result =  yaml.safe_load(f)
 
 #This string will hold final configurations
@@ -70,6 +76,6 @@ for data in final:
     config += one_record
 
 #Save final result to config ssh file
-with open('config_network', 'w') as f:
+with open(dir + "/config_network", "w") as f:
         f.write(config)
 
